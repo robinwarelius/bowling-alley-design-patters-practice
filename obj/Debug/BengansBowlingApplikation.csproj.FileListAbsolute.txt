@@ -1,0 +1,13 @@
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.AssemblyReference.cache
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.SuggestedBindingRedirects.cache
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.CoreCompileInputs.cache
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\bin\Debug\BengansBowlingApplikation.exe.config
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\bin\Debug\BengansBowlingApplikation.exe
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\bin\Debug\BengansBowlingApplikation.pdb
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.exe
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.pdb
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\bin\Debug\EntityFramework.dll
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\bin\Debug\EntityFramework.xml
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Robin\OneDrive\Skrivbord\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.CopyComplete

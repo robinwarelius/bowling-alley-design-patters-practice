@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BengansBowlingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BookTable">
+    <Key>
+      <PropertyRef Name="BookNumber" />
+    </Key>
+    <Property Name="BookNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserNumber" Type="Int32" Nullable="false" />
+    <Property Name="ContestNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ContestTable" Relationship="Self.FK_BookAlleyTable_ContestNumber" FromRole="BookTable" ToRole="ContestTable" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK_BookAlleyTable_UserNumber" FromRole="BookTable" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="ContestTable">
+    <Key>
+      <PropertyRef Name="ContestNumber" />
+    </Key>
+    <Property Name="ContestNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContestDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContestTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BookTable" Relationship="Self.FK_BookAlleyTable_ContestNumber" FromRole="ContestTable" ToRole="BookTable" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="UserNumber" />
+    </Key>
+    <Property Name="UserNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PersonalNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Score" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BookTable" Relationship="Self.FK_BookAlleyTable_UserNumber" FromRole="UserTable" ToRole="BookTable" />
+  </EntityType>
+  <Association Name="FK_BookAlleyTable_ContestNumber">
+    <End Role="ContestTable" Type="Self.ContestTable" Multiplicity="1" />
+    <End Role="BookTable" Type="Self.BookTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContestTable">
+        <PropertyRef Name="ContestNumber" />
+      </Principal>
+      <Dependent Role="BookTable">
+        <PropertyRef Name="ContestNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookAlleyTable_UserNumber">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="BookTable" Type="Self.BookTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserNumber" />
+      </Principal>
+      <Dependent Role="BookTable">
+        <PropertyRef Name="UserNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BengansBowlingEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookTable" EntityType="Self.BookTable" />
+    <EntitySet Name="ContestTable" EntityType="Self.ContestTable" />
+    <EntitySet Name="UserTable" EntityType="Self.UserTable" />
+    <AssociationSet Name="FK_BookAlleyTable_ContestNumber" Association="Self.FK_BookAlleyTable_ContestNumber">
+      <End Role="ContestTable" EntitySet="ContestTable" />
+      <End Role="BookTable" EntitySet="BookTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookAlleyTable_UserNumber" Association="Self.FK_BookAlleyTable_UserNumber">
+      <End Role="UserTable" EntitySet="UserTable" />
+      <End Role="BookTable" EntitySet="BookTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

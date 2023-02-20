@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BengansBowlingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BookTable">
+          <Key>
+            <PropertyRef Name="BookNumber" />
+          </Key>
+          <Property Name="BookNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserNumber" Type="int" Nullable="false" />
+          <Property Name="ContestNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContestTable">
+          <Key>
+            <PropertyRef Name="ContestNumber" />
+          </Key>
+          <Property Name="ContestNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContestDate" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContestTime" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="UserNumber" />
+          </Key>
+          <Property Name="UserNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PersonalNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Score" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BookAlleyTable_ContestNumber">
+          <End Role="ContestTable" Type="Self.ContestTable" Multiplicity="1" />
+          <End Role="BookTable" Type="Self.BookTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestTable">
+              <PropertyRef Name="ContestNumber" />
+            </Principal>
+            <Dependent Role="BookTable">
+              <PropertyRef Name="ContestNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookAlleyTable_UserNumber">
+          <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+          <End Role="BookTable" Type="Self.BookTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTable">
+              <PropertyRef Name="UserNumber" />
+            </Principal>
+            <Dependent Role="BookTable">
+              <PropertyRef Name="UserNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BengansBowlingModelStoreContainer">
+          <EntitySet Name="BookTable" EntityType="Self.BookTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContestTable" EntityType="Self.ContestTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BookAlleyTable_ContestNumber" Association="Self.FK_BookAlleyTable_ContestNumber">
+            <End Role="ContestTable" EntitySet="ContestTable" />
+            <End Role="BookTable" EntitySet="BookTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookAlleyTable_UserNumber" Association="Self.FK_BookAlleyTable_UserNumber">
+            <End Role="UserTable" EntitySet="UserTable" />
+            <End Role="BookTable" EntitySet="BookTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BengansBowlingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BookTable">
+          <Key>
+            <PropertyRef Name="BookNumber" />
+          </Key>
+          <Property Name="BookNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserNumber" Type="Int32" Nullable="false" />
+          <Property Name="ContestNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ContestTable" Relationship="Self.FK_BookAlleyTable_ContestNumber" FromRole="BookTable" ToRole="ContestTable" />
+          <NavigationProperty Name="UserTable" Relationship="Self.FK_BookAlleyTable_UserNumber" FromRole="BookTable" ToRole="UserTable" />
+        </EntityType>
+        <EntityType Name="ContestTable">
+          <Key>
+            <PropertyRef Name="ContestNumber" />
+          </Key>
+          <Property Name="ContestNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContestDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContestTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="BookTable" Relationship="Self.FK_BookAlleyTable_ContestNumber" FromRole="ContestTable" ToRole="BookTable" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="UserNumber" />
+          </Key>
+          <Property Name="UserNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PersonalNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Score" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BookTable" Relationship="Self.FK_BookAlleyTable_UserNumber" FromRole="UserTable" ToRole="BookTable" />
+        </EntityType>
+        <Association Name="FK_BookAlleyTable_ContestNumber">
+          <End Role="ContestTable" Type="Self.ContestTable" Multiplicity="1" />
+          <End Role="BookTable" Type="Self.BookTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContestTable">
+              <PropertyRef Name="ContestNumber" />
+            </Principal>
+            <Dependent Role="BookTable">
+              <PropertyRef Name="ContestNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookAlleyTable_UserNumber">
+          <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+          <End Role="BookTable" Type="Self.BookTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTable">
+              <PropertyRef Name="UserNumber" />
+            </Principal>
+            <Dependent Role="BookTable">
+              <PropertyRef Name="UserNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BengansBowlingEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookTable" EntityType="Self.BookTable" />
+          <EntitySet Name="ContestTable" EntityType="Self.ContestTable" />
+          <EntitySet Name="UserTable" EntityType="Self.UserTable" />
+          <AssociationSet Name="FK_BookAlleyTable_ContestNumber" Association="Self.FK_BookAlleyTable_ContestNumber">
+            <End Role="ContestTable" EntitySet="ContestTable" />
+            <End Role="BookTable" EntitySet="BookTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookAlleyTable_UserNumber" Association="Self.FK_BookAlleyTable_UserNumber">
+            <End Role="UserTable" EntitySet="UserTable" />
+            <End Role="BookTable" EntitySet="BookTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BengansBowlingModelStoreContainer" CdmEntityContainer="BengansBowlingEntities1">
+          <EntitySetMapping Name="BookTable">
+            <EntityTypeMapping TypeName="BengansBowlingModel.BookTable">
+              <MappingFragment StoreEntitySet="BookTable">
+                <ScalarProperty Name="BookNumber" ColumnName="BookNumber" />
+                <ScalarProperty Name="UserNumber" ColumnName="UserNumber" />
+                <ScalarProperty Name="ContestNumber" ColumnName="ContestNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContestTable">
+            <EntityTypeMapping TypeName="BengansBowlingModel.ContestTable">
+              <MappingFragment StoreEntitySet="ContestTable">
+                <ScalarProperty Name="ContestNumber" ColumnName="ContestNumber" />
+                <ScalarProperty Name="ContestDate" ColumnName="ContestDate" />
+                <ScalarProperty Name="ContestTime" ColumnName="ContestTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTable">
+            <EntityTypeMapping TypeName="BengansBowlingModel.UserTable">
+              <MappingFragment StoreEntitySet="UserTable">
+                <ScalarProperty Name="UserNumber" ColumnName="UserNumber" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="PersonalNumber" ColumnName="PersonalNumber" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

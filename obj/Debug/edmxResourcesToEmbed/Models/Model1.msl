@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BengansBowlingModelStoreContainer" CdmEntityContainer="BengansBowlingEntities1">
+    <EntitySetMapping Name="BookTable">
+      <EntityTypeMapping TypeName="BengansBowlingModel.BookTable">
+        <MappingFragment StoreEntitySet="BookTable">
+          <ScalarProperty Name="BookNumber" ColumnName="BookNumber" />
+          <ScalarProperty Name="UserNumber" ColumnName="UserNumber" />
+          <ScalarProperty Name="ContestNumber" ColumnName="ContestNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContestTable">
+      <EntityTypeMapping TypeName="BengansBowlingModel.ContestTable">
+        <MappingFragment StoreEntitySet="ContestTable">
+          <ScalarProperty Name="ContestNumber" ColumnName="ContestNumber" />
+          <ScalarProperty Name="ContestDate" ColumnName="ContestDate" />
+          <ScalarProperty Name="ContestTime" ColumnName="ContestTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTable">
+      <EntityTypeMapping TypeName="BengansBowlingModel.UserTable">
+        <MappingFragment StoreEntitySet="UserTable">
+          <ScalarProperty Name="UserNumber" ColumnName="UserNumber" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="PersonalNumber" ColumnName="PersonalNumber" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
