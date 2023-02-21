@@ -12,9 +12,9 @@ using BengansBowlingApplikation.Repositories.Models;
 using System.Runtime.InteropServices;
 using BengansBowlingApplikation.Services.Services;
 using BengansBowlingApplikation.Classes.UI;
-using BengansBowlingApplikation.Classes.SimulatingGame;
 using System.Xml.Schema;
 using BengansBowlingApplikation.Classes.Logger;
+using BengansBowlingApplikation.Classes.SimulatingGame;
 
 
 /* Design principles/patterns:
@@ -74,7 +74,7 @@ namespace BengansBowlingApplikation
 
                     if (person != null)
                     {
-                        IBooking booking = Factory.Factory.CreateBooking(person.Id, contest.Id);
+                        IBooking booking = Factory.Factory.CreateBooking(person, contest);
                         IBookingService bookingService = Factory.Factory.CreateBookingService();
                         bookingService.AddBooking(booking);
                     }                                                                                                                
@@ -104,11 +104,11 @@ namespace BengansBowlingApplikation
                     IPersonService personService = Factory.Factory.CreatePersonService();
                     List <IPerson> scoreList = personService.GetScoreList();
                     StandardMessages.DisplayScore(scoreList);                                
-                }
-
+                }        
+                
                 if (userChoice == 6)
-                {                 
-                    SimulatingGame.Play();
+                {
+                    GameInformation.part01();
                 }
 
             }

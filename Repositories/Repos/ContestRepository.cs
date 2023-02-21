@@ -4,6 +4,7 @@ using BengansBowlingApplikation.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,5 +40,9 @@ namespace BengansBowlingApplikation.Repositories.Repos
             match.Id = contest.ContestNumber;
             return match;
         }
+
+        
+
+
     }
 }

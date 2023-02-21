@@ -56,9 +56,9 @@
     <Compile Include="Classes\Factory\Factory.cs" />
     <Compile Include="Classes\Logger\Logger.cs" />
     <Compile Include="Classes\SimulatingGame\CaptureScore.cs" />
-    <Compile Include="Classes\SimulatingGame\Sets.cs" />
+    <Compile Include="Classes\SimulatingGame\Round.cs" />
+    <Compile Include="Classes\SimulatingGame\GameInformation.cs" />
     <Compile Include="Classes\SimulatingGame\UpdatingUserScore.cs" />
-    <Compile Include="Classes\SimulatingGame\SimulatingGame.cs" />
     <Compile Include="Classes\UI\WinnerDataCapture.cs" />
     <Compile Include="Models\BookTable.cs">
       <DependentUpon>Model1.tt</DependentUpon>

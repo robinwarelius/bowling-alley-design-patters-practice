@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace BengansBowlingApplikation.Classes.SimulatingGame
 {
-    public static class SimulatingGame
+    public static class GameInformation
     {
         
-        public static void Play()
+        public static void part01()
         {
             using (BengansBowlingEntities1 db = new BengansBowlingEntities1())
             {
@@ -29,7 +29,7 @@ namespace BengansBowlingApplikation.Classes.SimulatingGame
                     email.Add(i.UserTable.Email);
                 }
 
-                CaptureScore.Game(name, email);
+                CaptureScore.part02(name, email);
             }
             
         }

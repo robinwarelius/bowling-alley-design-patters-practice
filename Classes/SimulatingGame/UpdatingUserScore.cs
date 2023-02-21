@@ -10,19 +10,27 @@ namespace BengansBowlingApplikation.Classes.SimulatingGame
 {
     public static class UpdatingUserScore
     {
-        public static void UpdateScore(List<int> finalScore, List<string> email)
+        public static bool UpdateScore(List<int> finalScore, List<string> email)
         {
-            using (BengansBowlingEntities1 db = new BengansBowlingEntities1())
+            try
             {
-                var persons = db.BookTable.Where(u => u.UserNumber == u.UserNumber).ToList();
-
-                for (int i = 0; i <= persons.Count - 1; i++)
+                using (BengansBowlingEntities1 db = new BengansBowlingEntities1())
                 {
-                    persons[i].UserTable.Score += finalScore[i];
-                    db.SaveChanges();
+                    var persons = db.BookTable.Where(u => u.UserNumber == u.UserNumber).ToList();
 
+                    for (int i = 0; i <= persons.Count - 1; i++)
+                    {
+                        persons[i].UserTable.Score += finalScore[i];
+                        db.SaveChanges();
+
+                    }
+                    StandardMessages.DisplayValidationSuccesRegistration("score");
+                    return true;
                 }
-                StandardMessages.DisplayValidationSuccesRegistration("score");
+           
+            } catch (Exception ex)
+            {
+                return false;
             }
         }
     }

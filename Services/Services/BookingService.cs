@@ -30,7 +30,7 @@ namespace BengansBowlingApplikation.Services.Services
                 StandardMessages.DisplayValidationErrorBooking();
             }
 
-            BookTable userEmailExist = _db.BookTable.Where(x => x.UserNumber == booking.UserNumber).SingleOrDefault();
+            BookTable userEmailExist = _db.BookTable.Where(x => x.UserNumber == booking.person.Id).SingleOrDefault();
             if (userEmailExist != null)
             {
                 StandardMessages.DisplayValidationErrorRegistration("email");

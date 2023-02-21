@@ -46,9 +46,10 @@ namespace BengansBowlingApplikation.Factory
             return new ContestRepository();
         }
 
-        public static IBooking CreateBooking(int userNumber, int contestNumber )
+        
+        public static IBooking CreateBooking(IPerson person, IContest contest)
         {
-            return new Booking(userNumber, contestNumber);
+            return new Booking(person, contest);
 
         }
 

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BengansBowlingApplikation.Classes.SimulatingGame
 {
-    public static class Sets
+    public static class Round
     {
-        public static int[] Round(List<string> name)
+        public static int[] part03(List<string> name)
         {
             Random random = new Random();
 

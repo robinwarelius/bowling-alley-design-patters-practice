@@ -10,17 +10,15 @@ namespace BengansBowlingApplikation.Repositories.Models
     public class Booking : IBooking
     {
         public int Id { get; set; }
-        public int UserNumber { get; set; }
-        public int ContestNumber { get; set; }
+        public IPerson person { get; set; }
+        public IContest contest { get; set; }
 
-        public Booking(int userNumber, int contestNumber)
+        public Booking(IPerson person, IContest contest)
         {
-            UserNumber = userNumber;
-            ContestNumber = contestNumber;
+            this.person = person;
+            this.contest = contest;
         }
-        public Booking(int id, int userNumber, int contestNumber) : this(id, userNumber)
-        {
-            ContestNumber = contestNumber;
-        }
+
+        
     }
 }

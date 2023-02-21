@@ -8,20 +8,20 @@ namespace BengansBowlingApplikation.Classes.SimulatingGame
 {
     public static class CaptureScore
     {
-        public static void Game(List<string> name, List<string> email)
+        public static void part02(List<string> name, List<string> email)
         {
 
             Console.WriteLine("\nPress enter to play round 1");
             Console.ReadLine();
-            int[] score01 = Sets.Round(name);
+            int[] score01 = Round.part03(name);
 
             Console.WriteLine("\nPress enter to play round 2");
             Console.ReadLine();
-            int[] score02 = Sets.Round(name);
+            int[] score02 = Round.part03(name);
 
             Console.WriteLine("\nPress enter to play round 3");
             Console.ReadLine();
-            int[] score03 = Sets.Round(name);
+            int[] score03 = Round.part03(name);
 
             List<int> finalScore = new List<int>();
             for (int i = 0; i < name.Count; i++)
@@ -35,9 +35,7 @@ namespace BengansBowlingApplikation.Classes.SimulatingGame
                 Console.WriteLine($"{name[i]} : {finalScore[i]}");
             }
 
-            UpdatingUserScore.UpdateScore(finalScore, email);
-
-
+           UpdatingUserScore.UpdateScore(finalScore, email);
 
         }
     }

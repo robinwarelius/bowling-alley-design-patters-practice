@@ -18,5 +18,10 @@ namespace BengansBowlingApplikation.Repositories.Models
             Date = date;
             Time = time;
         }
+
+        public Contest(string date, string time, int id) : this(date, time)
+        {
+            Id = id;
+        }
     }
 }

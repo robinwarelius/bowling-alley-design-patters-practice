@@ -21,8 +21,8 @@ namespace BengansBowlingApplikation.Repositories.Repos
         public void AddBooking(IBooking booking)
         {
             BookTable book = new BookTable();
-            book.UserNumber = booking.UserNumber;
-            book.ContestNumber = booking.ContestNumber;
+            book.UserNumber = booking.person.Id;
+            book.ContestNumber = booking.contest.Id;
 
             _db.BookTable.Add(book);
             _db.SaveChanges();           
