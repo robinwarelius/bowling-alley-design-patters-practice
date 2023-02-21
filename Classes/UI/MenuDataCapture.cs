@@ -23,7 +23,7 @@ namespace BengansBowlingApplikation.UIclasses
                 return choice;
             } catch (Exception ex)
             {
-                Logger.WriteLog(ex.Message);
+                Factory.Factory.CreateLogger(ex.Message);
                 return 0;               
             }
             

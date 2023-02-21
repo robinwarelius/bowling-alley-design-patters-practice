@@ -23,6 +23,7 @@ using BengansBowlingApplikation.Classes.SimulatingGame;
  - Single Resposibility Principles = one module one purpose
  - Dependecy injection = one place where I create objects
  - Interface segregation = small and simple interfaces
+ - Singleton = logger
  - DRY = minimum repetition */
 
 
@@ -33,20 +34,8 @@ namespace BengansBowlingApplikation
         static void Main(string[] args)
         {         
             while (true)
-            {
-                bool userInput = false;
-                int userChoice = 0;
-                while (!userInput)
-                {
-                    StandardMessages.WelcomeMessage();
-                    userChoice = MenuDataCapture.MenuOptions();
-                    bool validateChoice = MenuValidator.Validate(userChoice);
-
-                    if (validateChoice)
-                    {
-                        userInput = true;
-                    }
-                }
+            {            
+                int userChoice = StartMenu.Menu();
 
                 if (userChoice == 1)
                 {
@@ -82,21 +71,12 @@ namespace BengansBowlingApplikation
 
                 if (userChoice == 4)
                 {
-                    List<string> winnerPerson = WinnerDataCapture.Capture();
-                    string email = winnerPerson[0];
-                    int score;
-                    try
+                    List<string> winnerPerson = WinnerDataCapture.Capture();              
+                    if (WinnerDataValidator.Validate(winnerPerson))
                     {
-                        score = Convert.ToInt32(winnerPerson[1]);
                         IPersonService personService = Factory.Factory.CreatePersonService();
-                        personService.UpdatePersonScore(email, score);
-                    }
-                    catch(Exception ex)
-                    {
-                        Logger.WriteLog(ex.Message);
-                        StandardMessages.DisplayValidationErrorRegistration("score");
-                        continue;
-                    }                                      
+                        personService.UpdatePersonScore(winnerPerson[0], Convert.ToInt32(winnerPerson[1]));
+                    }                                                                      
                 }
 
                 if (userChoice == 5)

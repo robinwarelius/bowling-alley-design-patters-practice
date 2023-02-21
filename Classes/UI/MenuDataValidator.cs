@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BengansBowlingApplikation.UIclasses
 {
-    public static class MenuValidator
+    public static class MenuDataValidator
     {
         public static bool Validate(int choice)
         {

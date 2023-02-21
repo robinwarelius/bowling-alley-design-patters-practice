@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BengansBowlingApplikation.Classes.Logger;
 
 namespace BengansBowlingApplikation.Factory
 {
@@ -61,6 +62,12 @@ namespace BengansBowlingApplikation.Factory
         public static IBookingRepository CreateBookingRepository()
         {
             return new BookingRepository();
+        }
+
+        public static void CreateLogger(string message)
+        {
+            Logger logger = new Logger();
+            logger.WriteLog(message);
         }
       
     }

@@ -39,7 +39,7 @@ namespace BengansBowlingApplikation.Services.Services
             catch (Exception ex)
             {
                 StandardMessages.DisplayValidationErrorRegistration("date/time");
-                Logger.WriteLog(ex.Message);
+                Factory.Factory.CreateLogger(ex.Message);
             }
            
 

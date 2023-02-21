@@ -25,7 +25,7 @@ namespace BengansBowlingApplikation.UIclasses
             }
             catch (Exception ex)
             {
-                Logger.WriteLog(ex.Message);
+                Factory.Factory.CreateLogger(ex.Message);
                 return null;
             }
                                           
