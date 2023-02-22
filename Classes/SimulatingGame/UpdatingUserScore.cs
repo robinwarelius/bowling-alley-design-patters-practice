@@ -18,12 +18,12 @@ namespace BengansBowlingApplikation.Classes.SimulatingGame
                 {
                     var persons = db.BookTable.Where(u => u.UserNumber == u.UserNumber).ToList();
 
-                    for (int i = 0; i <= persons.Count - 1; i++)
-                    {
-                        persons[i].UserTable.Score += finalScore[i];
-                        db.SaveChanges();
+                    var maxIndex = finalScore.IndexOf(finalScore.Max());
 
-                    }
+                    Console.WriteLine($"WÌNNER: {persons[maxIndex].UserTable.FirstName} {persons[maxIndex].UserTable.LastName}");
+                    persons[maxIndex].UserTable.Score += 1;
+                    db.SaveChanges();
+
                     StandardMessages.DisplayValidationSuccesRegistration("score");
                     return true;
                 }

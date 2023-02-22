@@ -46,7 +46,7 @@ namespace BengansBowlingApplikation.UIclasses
         {
             foreach (var user in persons)
             {
-                Console.WriteLine($"{user.FirstName} {user.LastName} | Score: {user.Score}");
+                Console.WriteLine($"{user.FirstName} {user.LastName} | Matches Won: {user.Score}");
             }
 
             Console.ReadLine();

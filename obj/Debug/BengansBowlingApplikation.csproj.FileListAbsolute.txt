@@ -24,3 +24,16 @@ C:\Users\Robin\OneDrive\Skrivbord\Objekorienterad analys och design\InlämningsU
 C:\Users\Robin\OneDrive\Skrivbord\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\EntityFramework.xml
 C:\Users\Robin\OneDrive\Skrivbord\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Robin\OneDrive\Skrivbord\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.CopyComplete
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\BengansBowlingApplikation.exe.config
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\BengansBowlingApplikation.exe
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\BengansBowlingApplikation.pdb
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\EntityFramework.dll
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\EntityFramework.xml
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.AssemblyReference.cache
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.SuggestedBindingRedirects.cache
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.CoreCompileInputs.cache
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.csproj.CopyComplete
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.exe
+C:\Users\Robin\OneDrive\Skrivbord\Kurser\Objekorienterad analys och design\InlämningsUppgift\BengansBowlingApplikation\obj\Debug\BengansBowlingApplikation.pdb
