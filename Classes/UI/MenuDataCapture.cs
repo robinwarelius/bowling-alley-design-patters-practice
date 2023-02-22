@@ -19,6 +19,7 @@ namespace BengansBowlingApplikation.UIclasses
                 Console.WriteLine("3. Registrera Tävlingsdeltagare");
                 Console.WriteLine("4. Registrera Tävlingsresultat");
                 Console.WriteLine("5. Poängställning");
+                Console.WriteLine("6. Simulera Match");
                 choice = Convert.ToInt32(Console.ReadLine());
                 return choice;
             } catch (Exception ex)
